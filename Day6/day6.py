@@ -99,7 +99,7 @@ if __name__ == '__main__':
         map_copy = copy.deepcopy(map)
         map_copy[i[0]][i[1]] = 1
         found_exit = False
-        previous_direction_changes = [(-1, -2), (-1, -3), (-1, -4), (-1, -5), (-1, -6)]
+        previous_direction_changes = [(-1, -2)]
         guard_pos = start_pos
         visited_map = list()
         current_direction = 0
