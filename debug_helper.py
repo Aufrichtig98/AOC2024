@@ -10,7 +10,7 @@ def print_grid(matrix):
     print_string = ""
     for i in range(len(matrix)):
         for j in range(len(matrix[i])):
-            diff_len_spaces  = " " * (len(str(highest_digit)) - len(str(matrix[i][j])))
+            diff_len_spaces  = " " * (len_highest_digit - len(str(matrix[i][j])))
             print_string += f"{diff_len_spaces}{str(matrix[i][j])} "
         print_string += "\n"
     print(print_string)
