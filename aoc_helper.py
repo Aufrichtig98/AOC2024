@@ -1,5 +1,6 @@
 import math
 from collections import defaultdict
+from functools import reduce
 
 DISTANCES = [(1,0), (-1,0), (0,1), (0,-1), (1,1), (-1,-1), (1,-1), (-1,1)]
 
@@ -47,3 +48,15 @@ def add_tuple(tuple_one,tuple_two, substract=False):
     if substract:
         return tuple_one[0] - tuple_two[0] ,tuple_one[1] - tuple_two[1]
     return tuple_one[0] + tuple_two[0], tuple_one[1] + tuple_two[1]
+
+def list_of_intstr_to_int(input):
+    return list(map(int, input))
+
+#Loops break this needs visited matrix to stop that
+def dfs(pos, edge_graph, nodes, seen):
+    if nodes[pos[0]][pos[1]] == 9:
+        seen[pos[0]][pos[1]] += 1
+    if not edge_graph[(pos[0],pos[1])]:
+        return
+    for edge in edge_graph[(pos[0], pos[1])]:
+        dfs(edge, edge_graph, nodes, seen)
